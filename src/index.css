@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  @apply bg-canvas text-navy-900 font-sans;
+  background-image:
+    radial-gradient(1200px 500px at 85% -10%, rgb(234 179 8 / 0.07), transparent 60%),
+    radial-gradient(900px 420px at -10% 0%, rgb(30 41 59 / 0.06), transparent 55%);
+  background-attachment: fixed;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: -0.02em;
+}
+
+@layer components {
+  .num {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .card {
+    @apply rounded-2xl border border-slate-200/80 bg-white/90 shadow-card backdrop-blur-sm;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lift hover:-translate-y-0.5;
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center gap-2 rounded-xl bg-gradient-to-b from-gold-400 to-gold-500 px-4 py-2.5 text-sm font-bold text-navy-900 shadow-gold ring-1 ring-gold-600/40 transition-all duration-200 hover:from-gold-300 hover:to-gold-400 hover:shadow-lift hover:-translate-y-px active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-500/50;
+  }
+
+  .btn-navy {
+    @apply inline-flex items-center gap-2 rounded-xl bg-gradient-to-b from-navy-800 to-navy-900 px-4 py-2.5 text-sm font-semibold text-white shadow-card ring-1 ring-navy-950/50 transition-all duration-200 hover:shadow-lift hover:-translate-y-px active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-navy-900/50;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 rounded-xl border border-line bg-white px-3.5 py-2 text-sm font-medium text-navy-700 transition-all duration-200 hover:border-navy-900/20 hover:text-navy-900 hover:shadow-card;
+  }
+
+  .input-base {
+    @apply w-full rounded-xl border border-line bg-white px-3.5 py-2.5 text-sm text-navy-900 placeholder:text-slate-400 transition-shadow duration-200 focus:border-gold-500/60 focus:outline-none focus:ring-4 focus:ring-gold-500/10;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] font-semibold;
+  }
+
+  .th-cell {
+    @apply px-4 py-3 text-left text-[11px] font-bold uppercase tracking-wider text-slate-500;
+  }
+
+  .td-cell {
+    @apply px-4 py-3 text-sm text-navy-800;
+  }
+}
+
+.card-hover:hover {
+  border-color: rgb(234 179 8 / 0.35);
+}
+
+/* thin gold rule used under page titles */
+.title-rule {
+  @apply mt-3 h-1 w-14 rounded-full bg-gradient-to-r from-gold-400 to-gold-600;
+}
+
+::selection {
+  background: rgb(234 179 8 / 0.25);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
